@@ -1,0 +1,30 @@
+#container{
+    text-align: center;     
+}
+
+#txtBox{
+    background-color: #d3d3d3;
+    margin-top: 5px;
+}
+
+#button{
+    margin-top: 10px;
+    background-color: #a9a9a9;
+    font-weight: bold;   
+}
+.gifBt{
+    margin: 10px;
+    background-color: #00ffff;
+    font-weight: bold; 
+}
+.gifPics{
+    height: 200px;
+    width: 200px;
+    margin: 10px;
+}
+span{
+    font-weight: bold;
+}
+.imgDivs{
+    display: inline-block;
+}
