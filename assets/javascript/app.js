@@ -64,7 +64,7 @@ $().ready(function () {
         var still;
         var rating;
 
-        queryURL = "http://api.giphy.com/v1/gifs/search?q=" + searchVal + "&limit=" + limit + "&apikey=" + apiKey + "";
+        queryURL = "https://api.giphy.com/v1/gifs/search?q=" + searchVal + "&limit=" + limit + "&apikey=" + apiKey + "";
         $.ajax({
             url: queryURL,
             method: "GET"
