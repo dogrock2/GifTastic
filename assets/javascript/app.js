@@ -12,14 +12,16 @@ $().ready(function () {
     function displayButtons() {
         $("#butDiv").empty();
         $.each(startButtons, function (index, value) {
-            $("#butDiv").append("<button type='button' class='gifBt'>" + value.toUpperCase() + "</button>");
+            var b = $('<button>');
+            b.addClass('gifBt');
+            b.text(value.toUpperCase());
+            $("#butDiv").append(b);
         });
     } //ends displayButtons
 
     $("#button").on("click", function () {
         var input = $("#txtBox").val();
         $("#txtBox").val('');
-        //$("#butDiv").append("<button type='button' class='gifBt'>" + input.toUpperCase() + "</button>");
         startButtons.push(input);
         displayButtons();
     });
@@ -74,7 +76,21 @@ $().ready(function () {
                 gif = response.data[i].images.original.url;
                 rating = response.data[i].rating;
                 still = response.data[i].images.original_still.url;
-                $("#gifDiv").append('<div class="imgDivs"><img src="' + still + '" class="gifPics"><br><span>Rated: ' + rating.toUpperCase() + '</span></div>');
+
+                var divForImg = $("<div>");
+                var imgGif = $("<img>");
+                var imgSpan = $("<span>");
+
+                imgGif.addClass("gifPics");
+                imgGif.attr('src', still);
+
+                imgSpan.text("Rating: " + rating.toUpperCase());
+
+                divForImg.addClass("imgDivs");
+                divForImg.append(imgGif);
+                divForImg.append("<br>");
+                divForImg.append(imgSpan);
+                $("#gifDiv").append(divForImg);
 
             } //ends for
             //console.log(resultsArray);
